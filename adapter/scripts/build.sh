@@ -52,16 +52,16 @@ if [ $? -ne 0 ]; then
 fi
 
 
-golint -set_exit_status ./...
-if [ $? -ne 0 ]; then
-  echo "INFO: Trying to install golint"
-  go install golang.org/x/lint/golint
-  golint -set_exit_status ./...
-  if [ $? -ne 0 ]; then
-    echo "FAILED: golint Failure"
-    exit 1
-  fi
-fi
+#golint -set_exit_status ./...
+#if [ $? -ne 0 ]; then
+#  echo "INFO: Trying to install golint"
+#  go install golang.org/x/lint/golint
+#  golint -set_exit_status ./...
+#  if [ $? -ne 0 ]; then
+#    echo "FAILED: golint Failure"
+#    exit 1
+#  fi
+#fi
 
 go vet -c=5 ./...
 if [ $? -ne 0 ]; then 
